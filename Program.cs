@@ -7,4 +7,7 @@ TasksScheduler tasksScheduler = new TasksScheduler();
 tasksScheduler.WorkWithThreeFiles();
 
 // Параллельное считывание и подсчет кол-ва пробелов у файлов из папки по указанному пути
-tasksScheduler.WorkWithFilesFromFolder("C:\\Users\\79307\\Downloads\\onTime");
+Console.WriteLine("Введите путь к папке, с которой будут прочтены файлы:");
+string path = Console.ReadLine();
+
+tasksScheduler.WorkWithFilesFromFolder(path);

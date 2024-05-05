@@ -28,16 +28,16 @@ internal class TasksScheduler
 
         _taskItems.Clear();
 
-        Console.WriteLine($"Завершена работа метода параллельного считывания 3 файлов. Файлы бали обработаны за {stopwatch.Elapsed}");
+        Console.WriteLine($"Завершена работа метода параллельного считывания 3 файлов. Файлы были обработаны за {stopwatch.Elapsed}");
     }
 
     public void WorkWithFilesFromFolder(string path)
     {
         Console.WriteLine($"Запущен метод параллельного считывания файлов из папки {path}");
 
-        if (string.IsNullOrWhiteSpace(path))
+        if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path))
         {
-            Console.WriteLine("Указан пустой путь к папке. Выход из метода");
+            Console.WriteLine("Указан некорректный путь. Выход из метода");
             return;
         }
 
@@ -60,7 +60,7 @@ internal class TasksScheduler
 
         _taskItems.Clear();
 
-        Console.WriteLine($"Завершена работа метода параллельного считывания файлов из папки. Файлы бали обработаны за {stopwatch.Elapsed}");
+        Console.WriteLine($"Завершена работа метода параллельного считывания файлов из папки. Файлы были обработаны за {stopwatch.Elapsed}");
     }
 
     #region private block
